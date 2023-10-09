@@ -1,5 +1,5 @@
 """
-    The Base of methods
+The Base of methods
 
 """
 import numpy as np
@@ -21,8 +21,7 @@ class MethodBase:
 
     def inv_matrix(self, M):
         """
-            Find the inverse matrix by Gauss-Jordan elimination
-        
+        Find the inverse matrix by Gauss-Jordan elimination
         """
         rlen = M.shape[0]
         Minv = np.eye(rlen)
@@ -44,8 +43,7 @@ class MethodBase:
     
     def gen_A_and_b(self):
         """
-            Generate matrices A and b
-
+        Generate matrices A and b
         """
         row, column = len(self.points), self.n
         A, b = np.zeros((row, column)), np.zeros((row, 1))

@@ -70,11 +70,9 @@ def visualization(results, points):
 
 if __name__ == '__main__':
     points = load_points()
-    print("Please enter n:")
-    n = int(input())
-    print("Please enter lambda:")
-    l = int(input())
-    lr = 0.000005 # learning rate 
+    n = int(input("Please enter n:\n"))
+    l = int(input("Please enter lambda:\n"))
+    lr = 0.0000005 # learning rate 
 
     m1 = LSE(n, l, points)
     m2 = SteepestDescent(n, lr, points)

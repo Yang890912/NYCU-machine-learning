@@ -17,7 +17,7 @@ class SteepestDescent(MethodBase):
 
         """
         w = np.zeros((self.n, 1))   # initialize w as [0, 0, ..., 0]^T
-        epochs = 8000
+        epochs = 10000
         for _ in range(epochs):
             gfx = 2 * self.multi_matrix(self.multi_matrix(A.T, A), w) - 2 * self.multi_matrix(A.T, b)
             w = w - self.lr * gfx

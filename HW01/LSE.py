@@ -1,5 +1,5 @@
 """
-    The LSE method to find the best fitting line. 
+The LSE method to find the best fitting line. 
 
 """
 from MethodBase import MethodBase
