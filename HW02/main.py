@@ -13,8 +13,8 @@ def load_mnist(kind):
     :param kind: the kind of dataset (test or train)
     :type kind: string
     """
-    labels_path = './datasets/{kind}-labels-idx1-ubyte.gz'.format(kind=kind)
-    images_path = './datasets/{kind}-images-idx3-ubyte.gz'.format(kind=kind)
+    labels_path = "./datasets/{kind}-labels-idx1-ubyte.gz".format(kind=kind)
+    images_path = "./datasets/{kind}-images-idx3-ubyte.gz".format(kind=kind)
 
     with gzip.open(labels_path, 'rb') as lbpath:
         _, _ = struct.unpack('>II', lbpath.read(8)) # big endian, 32-bit integer
@@ -29,6 +29,7 @@ def load_mnist(kind):
 def Discrete_add_peudocount(label_px_bin_freq):
     """
     Add the peudocount, trans 0 as 1
+    
     """
     for lb in range(10):
         px_bin_freq = label_px_bin_freq[lb]
@@ -103,7 +104,8 @@ def Continuous_Naive_Bayes_classifier():
     """
     The Naive_Bayes_classifier (Continuous)
 
-    Calculate the probability of such event under each label ex: (px1=bin4, px2=bin5, ... px784=bin6|label=1),
+    Calculate the probability of such event under each label ex: (px1=bin4, px2=bin5, ... px784=bin6|label=1)
+
     """
     mean = {lb: np.zeros(num_of_pixels) for lb in range(10)} 
     var = {lb: np.ones(num_of_pixels) for lb in range(10)} 
