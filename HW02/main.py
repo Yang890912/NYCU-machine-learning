@@ -161,7 +161,7 @@ if __name__ == '__main__':
     test_labels, test_images, num_of_test, _ = load_mnist('t10k')
 
     num_of_train = 3000
-    num_of_test = 3
+    num_of_test = 20
 
     n = int(input("Please enter toggle option (0 or 1):\n"))
 
