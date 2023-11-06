@@ -112,7 +112,7 @@ def Baysian_linear_regression(b, n, a, w):
     a = 1/a                 # the fornmula denotes a^-1 as var 
     _lambda = inv(_lambda)  # the fornmula denotes ^^-1 as covar 
 
-    for cnt in range(200):
+    for cnt in range(1000):
         x, y = polynomial_basis_linear_model_data_generator(n, 1/a, w)
         data_points.append((x, y))
         X = design_matrix(x, n)
@@ -149,7 +149,7 @@ def Baysian_linear_regression(b, n, a, w):
         # If converge, break
         flag = False
         for i in range(len(_mu)):
-            if(abs(m[i]-_mu[i]) > 1e-4):
+            if(abs(m[i]-_mu[i]) > 1e-12):
                 flag = True
         if not flag and cnt > 50:
             break
