@@ -24,9 +24,9 @@ def gen_fitting_line(c):
         if i == 0:
             s = '%fX^%d' %(_c, len(c)-1-i)
         elif i == len(c)-1:
-            s += '%s %f' %(" +" if _c < 0 else " -", abs(_c))
+            s += '%s %f' %(" -" if _c < 0 else " +", abs(_c))
         else:
-            s += '%s %fX^%d' %(" +" if _c < 0 else " -", abs(_c), len(c)-1-i)  
+            s += '%s %fX^%d' %(" -" if _c < 0 else " +", abs(_c), len(c)-1-i)  
     return s
 
 def gen_total_error(c, points):   # RSS
